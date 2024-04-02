@@ -29,3 +29,14 @@ Protocolos a implementar:
 2. FTP
 3. HTTP
 4. IRC
+
+
+## Integrantes
+
+**Grupo 312**
+
+- Kevin Manzano Rodriguez
+- Roger Fuente Rodriguez
+- Jackson Claudio Vera Pineda
+
+## Protocolo HTTP
