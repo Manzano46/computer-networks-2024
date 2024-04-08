@@ -36,11 +36,12 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_HEAD(self):
         self.send_response(200)
         self.end_headers()
+        self.wfile.write(b'Hello, DELETE!')
 
     # Maneja las solicitudes OPTIONS
     def do_OPTIONS(self):
         self.send_response(200)
-        self.send_header('Allow', 'OPTIONS, GET, POST, HEAD, PUT, DELETE')  # Envía un encabezado 'Allow' con los métodos permitidos
+        self.send_header('Allow', 'OPTIONS, GET, POST, HEAD, PUT, DELETE, CONNECT, TRACE, LINK, UNNLINK, CUSTOM')  # Envía un encabezado 'Allow' con los métodos permitidos
         self.end_headers()
 
     # Maneja las solicitudes CONNECT
@@ -75,6 +76,6 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
 # Si este script se ejecuta como el programa principal, inicia el servidor
 if __name__ == "__main__":
-    server = ThreadedHTTPServer(('localhost', 8000), MyHTTPRequestHandler)  # Crea un servidor en localhost en el puerto 8000
+    server = ThreadedHTTPServer(('192.168.150.107', 8000), MyHTTPRequestHandler)  # Crea un servidor en localhost en el puerto 8000
     print('Starting server, use <Ctrl-C> to stop')  # Imprime un mensaje indicando que el servidor está iniciando
     server.serve_forever()  # Inicia el servidor
