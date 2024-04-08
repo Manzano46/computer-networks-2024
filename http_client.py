@@ -15,11 +15,15 @@ class HttpClient:
 
     def send_request(self, method, path, headers=None, body=None, username=None, password=None):
         try:
+            
             # Crea un socket y establece un tiempo de espera
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            # socket.AF_INET se refiere a la familia de ipv4, tambie existe AF_INET6 para ipv6
+            # socket.SOCK_STREAM representa el tipo de conexion, en este caso utilizamos TCP, tambien esta socket.SOCK_DGRAM como UDP
+
+            sock = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
             sock.settimeout(10.0)
 
-            # Si se debe usar HTTPS, envuelve el socket con un contexto SSL y cambia el puerto a 443
+            # Si se debe usar HTTPS, envuelve el socket con un contexto SSL/TLS(secure secret layer y transport layer security) y cambia el puerto a 443
             if self.use_https:
                 context = ssl.create_default_context()
                 sock = context.wrap_socket(sock, server_hostname=self.host)
@@ -47,11 +51,11 @@ class HttpClient:
             if 'Host' not in headers:
                 headers['Host'] = self.host
 
-            # Agrega soporte para el encabezado 'User-Agent' si no está presente
+            # Agrega soporte para el encabezado 'User-Agent' si no está presente (aplicacion)
             if 'User-Agent' not in headers:
                 headers['User-Agent'] = 'MyHttpClient/1.0'
 
-            # Agrega soporte para el encabezado 'Accept' si no está presente
+            # Agrega soporte para el encabezado 'Accept' si no está presente (que puede recibir)
             if 'Accept' not in headers:
                 headers['Accept'] = '*/*'
 
@@ -71,7 +75,7 @@ class HttpClient:
             headers, body = self.receive_response(sock)
             self.last_response_headers = headers
 
-            # Si la respuesta es una redirección, sigue la redirección
+            # Si la respuesta es una redirección, sigue la redirección resuelve recursivo
             if headers['Status'].startswith(('301', '302', '303', '307', '308')):
                 new_url = headers['Location']
                 sock.close()
