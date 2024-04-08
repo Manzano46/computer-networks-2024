@@ -1,6 +1,6 @@
 # Redes de computadoras 2024
 
-El objetivo del proyecto es desarrollar una implemetación desde cero de un cliente de un protocolo de la capa de aplicación del modelo TCP/IP. 
+El objetivo del proyecto es desarrollar una implemetación desde cero de un cliente de un protocolo de la capa de aplicación del modelo TCP/IP.
 
 Dicha implementacion debe estar completamente reflejada en github. Para ello cada equipo debe:
 
@@ -11,29 +11,31 @@ No existe limitante en cuanto al lenguage de programación de la solución a emp
 También es obligatorio el uso de sockets para la solucion computacional y queda absolutamente prohibido el empleo de alguna biblioteca de terceros que facilite el trabajo a realizar.
 
 Requerimientos mínimos para la entrega del proyecto y por tanto su evaluación:
-1. Breve descripción de la implementación propuesta del protocolo. 
-2. La solución se comunica exitosamente con un servidor del protocolo correspondiente.
-3. Cliente básico o de consola. 
+
+1. Breve descripción de la implementación propuesta del protocolo.
+1. La solución se comunica exitosamente con un servidor del protocolo correspondiente.
+1. Cliente básico o de consola.
 
 Extras que contribuyen a una evaluación positiva del proyecto:
-1. Interfaz visual
-2. Compatibilidad con las versiones seguras del protocolo.
-3. Originalidad/Creatividad.
-4. Implementacion del servidor
 
-Todos los equipos deben de estar conformados máximo de tres estudiantes. Sin excepciones. 
+1. Interfaz visual
+1. Compatibilidad con las versiones seguras del protocolo.
+1. Originalidad/Creatividad.
+1. Implementacion del servidor
+
+Todos los equipos deben de estar conformados máximo de tres estudiantes. Sin excepciones.
 Ante cualquier duda, si la misma se refiere a vías de implementación, se asume la más compleja. A excepción de que un profesor del claustro indique lo contrario.
 
 Protocolos a implementar:
-1. SMTP
-2. FTP
-3. HTTP
-4. IRC
 
+1. SMTP
+1. FTP
+1. HTTP
+1. IRC
 
 ## Integrantes
 
-**Grupo 312**
+### Grupo 312
 
 - Kevin Manzano Rodriguez
 - Roger Fuente Rodriguez
